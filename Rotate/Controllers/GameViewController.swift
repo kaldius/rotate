@@ -1,9 +1,11 @@
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
     @IBOutlet weak var boardView: UIView!
     @IBOutlet weak var pointsCounter: UITextView!
 
+    var numRows: Int = 2
+    var numCols: Int = 2
     var board: Board!
     var boardRenderer: BoardRenderer!
     var viewAnimationInProgress: Bool = false {
@@ -16,8 +18,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let numRows = 10
-        let numCols = 10
         board = Board(numRows: numRows, numCols: numCols, delegate: self)
         boardRenderer = BoardRenderer(boardView: boardView, board: board, delegate: self)
     }
@@ -33,15 +33,19 @@ class ViewController: UIViewController {
             pointsCounter.text = "Collisions: \(board.points)"
         }
     }
+
+    @IBAction func quitButtonPressed(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
 
-extension ViewController: BoardDelegate {
+extension GameViewController: BoardDelegate {
     func didChange() {
         boardRenderer.render(board: board)
     }
 }
 
-extension ViewController: GameObjectViewDelegate {
+extension GameViewController: GameObjectViewDelegate {
     func viewAnimationDidBegin() {
         viewAnimationInProgress = true
     }

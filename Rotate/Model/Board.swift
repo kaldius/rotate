@@ -26,6 +26,7 @@ struct Board {
 
     mutating func rotate(row: Int, col: Int, clockwise: Bool = true) {
         matrix[row][col].rotate(clockwise: clockwise)
+        points = 0
     }
 
     subscript(_ intPoint: IntPoint) -> Cell {

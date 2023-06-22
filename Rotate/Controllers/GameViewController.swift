@@ -19,11 +19,11 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         board = Board(numRows: numRows, numCols: numCols, delegate: self)
-        boardRenderer = BoardRenderer(boardView: boardView, board: board, delegate: self)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        boardRenderer = BoardRenderer(boardView: boardView, board: board, delegate: self)
         boardRenderer.render(board: board)
     }
 

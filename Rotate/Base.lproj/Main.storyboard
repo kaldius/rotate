@@ -17,31 +17,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNi-Bn-wXB" userLabel="BoardView">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="709"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="urA-u7-n2A">
+                                <rect key="frame" x="0.0" y="768" width="293" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="393" id="WMT-6g-kz8"/>
+                                    <constraint firstAttribute="height" constant="50" id="Dse-sI-aaB"/>
                                 </constraints>
-                            </view>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vNi-Bn-wXB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0nd-nQ-lCS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vNi-Bn-wXB" secondAttribute="bottom" id="ZZY-K5-BKf"/>
-                            <constraint firstItem="vNi-Bn-wXB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gKh-bS-gCh"/>
+                            <constraint firstItem="vNi-Bn-wXB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0ek-Uh-0ay"/>
+                            <constraint firstItem="vNi-Bn-wXB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5vR-9a-xdr"/>
+                            <constraint firstItem="urA-u7-n2A" firstAttribute="top" secondItem="vNi-Bn-wXB" secondAttribute="bottom" id="JUd-js-bqX"/>
+                            <constraint firstItem="urA-u7-n2A" firstAttribute="top" secondItem="vNi-Bn-wXB" secondAttribute="bottom" id="Zkw-yc-JCk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="urA-u7-n2A" secondAttribute="trailing" constant="100" id="cjx-dV-tbR"/>
+                            <constraint firstItem="vNi-Bn-wXB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fVG-eZ-X5N"/>
+                            <constraint firstItem="urA-u7-n2A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kKl-5i-pL6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="urA-u7-n2A" secondAttribute="bottom" id="rln-ov-zfm"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="boardView" destination="vNi-Bn-wXB" id="p1U-8h-F5G"/>
+                        <outlet property="pointsCounter" destination="urA-u7-n2A" id="t8d-SH-UgD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="-27"/>
+            <point key="canvasLocation" x="107.63358778625954" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1,14 +1,9 @@
-//
-//  ViewController.swift
-//  Rotate
-//
-//  Created by Quan Teng Foong on 20/6/23.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var boardView: UIView!
+    @IBOutlet weak var pointsCounter: UITextView!
+
     var board: Board!
     var boardRenderer: BoardRenderer!
     var viewAnimationInProgress: Bool = false {
@@ -25,8 +20,6 @@ class ViewController: UIViewController {
         let numCols = 10
         board = Board(numRows: numRows, numCols: numCols, delegate: self)
         boardRenderer = BoardRenderer(boardView: boardView, board: board, delegate: self)
-
-        // Do any additional setup after loading the view.
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +30,7 @@ class ViewController: UIViewController {
     func updateOnce() {
         if board.update() {
             boardRenderer.delayedRender(board: board)
+            pointsCounter.text = "Collisions: \(board.points)"
         }
     }
 }

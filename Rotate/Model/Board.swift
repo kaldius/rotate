@@ -3,6 +3,7 @@ struct Board {
 
     let numRows: Int
     let numCols: Int
+    var points: Int = 0
     var matrix: [[Cell]]
     var delegate: BoardDelegate?
 
@@ -50,6 +51,7 @@ struct Board {
                     if !toRotate.contains(otherCell.center) {
                         toRotate.insert(otherCell.center)
                     }
+                    points += 1
                     updated = true
                 }
             }

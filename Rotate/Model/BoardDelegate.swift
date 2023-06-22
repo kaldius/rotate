@@ -1,0 +1,3 @@
+protocol BoardDelegate {
+    func didChange()
+}
